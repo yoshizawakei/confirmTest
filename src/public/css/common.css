@@ -1,0 +1,78 @@
+body {
+    background-color: white;
+}
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+    background-color: white;
+    font-family: "Domine", serif;
+    color: #928178;
+}
+
+.header__inner {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header__link {
+    margin-left: auto;
+}
+
+.logo {
+    font-size: 35px;
+    font-family: "Domine", serif;
+    color: #928178;
+    text-decoration: none;
+    margin: 0;
+}
+
+.register {
+    color: #928178;
+    background-color: #f3f3f2;
+    text-decoration: none;
+    padding: 8px 25px;
+    border: 1px solid #928178;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 40px;
+    font-family: "Domine", serif;
+
+}
+
+.login {
+    color: #928178;
+    background-color: #f3f3f2;
+    text-decoration: none;
+    padding: 8px 25px;
+    border: 1px solid #928178;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 40px;
+    font-family: "Domine", serif;
+}
+
+.logout {
+    color: #928178;
+    background-color: #f3f3f2;
+    text-decoration: none;
+    padding: 8px 25px;
+    border: 1px solid #928178;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 40px;
+    font-family: "Domine", serif;
+}
+
+
+.main {
+    max-width: 1230px;
+    margin: 0 auto;
+    font-family: "Domine", serif;
+    color: #928178;
+}

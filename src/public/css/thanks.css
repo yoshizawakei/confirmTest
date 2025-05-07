@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.thank-you-text {
+    position: relative;
+    font-size: 170px;
+    font-family: "Domine", serif;
+    color: #928178;
+    color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.thank-you-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.message {
+    font-size: 18px;
+    color: #928178;
+    font-family: "Domine", serif;
+    margin-bottom: 30px;
+}
+
+/* .button-wrapper {
+    ボタンを中央に配置する場合など
+} */
+
+.home-button {
+    display: inline-block;
+    background-color: #928178;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 1px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: "Domine", serif;
+}
+
+.home-button:hover {
+    background-color: #555;
+}

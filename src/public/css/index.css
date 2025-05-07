@@ -1,0 +1,143 @@
+.contact-title {
+    font-size: 30px;
+    color: #928178;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Domine", serif;
+    font-weight: normal;
+}
+
+.contact-form-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.contact-form .form-group {
+    margin-bottom: 30px;
+    display: flex;
+    /* label と input-area を横並びにする */
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #928178;
+    font-size: 18px;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    color: #928178;
+    font-size: 18px;
+    width: 30%;
+    text-align: left;
+}
+
+.contact-form label::after {
+    content: "※";
+    color: red;
+    margin-left: 5px;
+}
+
+.contact-form .form-group.required label::after {
+    content: "※";
+}
+
+.input-area {
+    width: 70%;
+}
+
+.name-inputs,
+.phone-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 2px;
+    color: #928178;
+}
+
+.hyphen {
+    margin: 0 5px;
+    line-height: 2;
+}
+
+.contact-form input[type="radio"],
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="password"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 25px;
+    border: none;
+    background-color: #e7e7eb;
+    border-radius: 2px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+    display: block;
+    color: #928178;
+    font-family: "Domine", serif;
+}
+
+.gender-inputs {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2px;
+    font-family: "Domine", serif;
+}
+
+.gender-option {
+    display: flex;
+    margin-right: 5px;
+}
+
+.gender-option input[type="radio"] {
+    width: 20%;
+    color: #928178;
+}
+
+.gender-inputs div {
+    font-size: 16px;
+    width: 80%;
+}
+
+/* .phone-inputs input {
+    margin: 0 auto;
+} */
+
+.contact-form textarea {
+    min-height: 100px;
+}
+
+.form__error {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #a58f86;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    width: 180px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #555;
+}

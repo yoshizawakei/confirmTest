@@ -1,0 +1,72 @@
+/* auth.css */
+body {
+    background-color: #eae5e3;
+}
+
+.register-header {
+    text-align: center;
+    font-weight: normal;
+    margin: 30px;
+    font-family: "Domine", serif;
+    color: #928178;
+    font-size: 30px;
+}
+
+.register {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: white;
+    border-radius: 3px;
+    border: rgba(0, 0, 0, 0.1) 1px solid;
+}
+
+.register-form .form-group {
+    margin-bottom: 40px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #928178;
+    font-family: "Domine", serif;
+    font-size: 19px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: calc(100% - 12px);
+    padding: 10px 20px;
+    border: none;
+    background-color: #e7e7eb;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #928178;
+    font-family: "Domine", serif;
+}
+
+.button {
+    text-align: center;
+}
+
+.register-form button.register-button {
+    background-color: #928178;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100px;
+    font-family: "Domine", serif;
+}
+
+.register-form button.register-button:hover {
+    background-color: #d3cbc6;
+}
