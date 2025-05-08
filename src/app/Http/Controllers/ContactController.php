@@ -20,6 +20,16 @@ class ContactController extends Controller
     {
         $validated = $request->validated();
         $validated["tel"] = $validated["phone1"] . $validated["phone2"] .  $validated["phone3"];
+
+        // genderのvalueの変換
+        if ($validated["gender"] === "male") {
+            $validated["gender"] = "男性";
+        } elseif ($validated["gender"] === "female") {
+            $validated["gender"] = "女性";
+        } elseif ($validated["gender"] === "other") {
+            $validated["gender"] = "その他";
+        }
+
         session(["validatedContact" => $validated]);
         $contactData = $validated;
         $categoryName = Category::find($contactData['category_id'])->content;

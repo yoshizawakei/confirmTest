@@ -97,7 +97,10 @@
 
 .gender-option input[type="radio"] {
     width: 20%;
+    accent-color: #928178;
     color: #928178;
+    border: none;
+    outline: none;
 }
 
 .gender-inputs div {
@@ -105,9 +108,9 @@
     width: 80%;
 }
 
-/* .phone-inputs input {
-    margin: 0 auto;
-} */
+.phone-inputs input[type="text"]::placeholder {
+    text-align: center;
+}
 
 .contact-form textarea {
     min-height: 100px;

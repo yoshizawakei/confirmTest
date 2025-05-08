@@ -23,7 +23,7 @@
             @csrf
             <input class="item" type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ old("keyword") }}">
 
-            <select class="sex" name="gender">
+            <select class="gender" name="gender">
                 <option value="">性別</option>
                 <option value="男性">男性</option>
                 <option value="女性">女性</option>
@@ -41,13 +41,18 @@
 
             <button class="search-button" type="submit">検索</button>
         </form>
-        <form action="/admin/reset" method="GET" class="reset-fields">
+        <form action="/admin/reset" method="get" class="reset-fields">
             @csrf
             <button class="reset-button" type="submit">リセット</button>
         </form>
     </div>
     <div class="table-actions">
-        <form action="/admin/export" class="export" >
+        <form action="/export" class="export" method="get">
+            @csrf
+            <input type="hidden" name="keyword" value="{{ request("keyword") }}">
+            <input type="hidden" name="gender" value="{{ request("gender") }}">
+            <input type="hidden" name="inquiry_type" value="{{ request("inquiry_type") }}">
+            <input type="hidden" name="search_date" value="{{ request("search_date") }}">
             <button type="submit" class="export-button">エクスポート</button>
         </form>
         <div class="pagination">

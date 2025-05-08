@@ -64,5 +64,38 @@ class AuthController extends Controller
         return redirect("/admin");
     }
 
+    public function exportContacts()
+    {
+        $contacts = Contact::query();
+        
+
+        $contacts = Contact::with("category")->get();
+        $csvData = "ID,カテゴリー,姓,名,性別,メールアドレス,電話番号,住所,住所その他,問い合わせ内容,問い合わせ日\n";
+        foreach ($contacts as $contact) {
+            $csvData .= sprintf(
+                "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n",
+                str_replace(",", " ", $contact->id),
+                str_replace(",", " ", $contact->category->content),
+                str_replace(",", " ", $contact->name_first),
+                str_replace(",", " ", $contact->name_last),
+                str_replace(",", " ", $contact->gender),
+                str_replace(",", " ", $contact->email),
+                str_replace(",", " ", $contact->tel),
+                str_replace(",", " ", $contact->address),
+                str_replace(",", " ", $contact->building),
+                str_replace(",", " ", $contact->detail),
+                str_replace(",", " ", $contact->created_at),
+            );
+        }
+
+        $filename = "contacts_" . date("YmdHis") . ".csv";
+        $headers = [
+            "Content-Type" => "text/csv",
+            "Content-Disposition" => "attachment; filename=$filename",
+        ];
+        return response($csvData, 200, $headers)
+            ->header("Content-Type", "text/csv")
+            ->header("Content-Disposition", "attachment; filename=$filename");
+    }
 
 }

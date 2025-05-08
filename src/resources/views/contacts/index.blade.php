@@ -33,15 +33,15 @@
                 <div class="input-area">
                     <div class="gender-inputs">
                         <div class="gender-option">
-                            <input type="radio" name="gender" value="男性" checked>
+                            <input type="radio" name="gender" value="male" checked class="styled-radio">
                             <div>男性</div>
                         </div>
                         <div class="gender-option">
-                            <input type="radio" name="gender" value="女性">
+                            <input type="radio" name="gender" value="female" class="styled-radio">
                             <div>女性</div>
                         </div>
                         <div class="gender-option">
-                            <input type="radio" name="gender" value="その他">
+                            <input type="radio" name="gender" value="other" class="styled-radio">
                             <div>その他</div>
                         </div>
                     </div>

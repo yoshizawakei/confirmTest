@@ -28,3 +28,4 @@ Route::get("/admin/search", [AuthController::class, "search"]);
 Route::get("/admin/reset", [AuthController::class, "reset"]);
 Route::post("/admin/contacts/{contact}/details", [AuthController::class, "showContactDetails"])->name("admin.contacts.details");
 Route::delete("/delete", [AuthController::class, "destroy"]);
+Route::get("/export", [AuthController::class, "exportContacts"]);
