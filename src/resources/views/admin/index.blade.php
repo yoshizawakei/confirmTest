@@ -25,9 +25,9 @@
 
             <select class="gender" name="gender">
                 <option value="">性別</option>
-                <option value="男性">男性</option>
-                <option value="女性">女性</option>
-                <option value="その他" >その他</option>
+                <option value="male">男性</option>
+                <option value="female">女性</option>
+                <option value="other" >その他</option>
             </select>
 
             <select class="inquiry" name="inquiry_type">
@@ -48,11 +48,6 @@
     </div>
     <div class="table-actions">
         <form action="/export" class="export" method="get">
-            @csrf
-            <input type="hidden" name="keyword" value="{{ request("keyword") }}">
-            <input type="hidden" name="gender" value="{{ request("gender") }}">
-            <input type="hidden" name="inquiry_type" value="{{ request("inquiry_type") }}">
-            <input type="hidden" name="search_date" value="{{ request("search_date") }}">
             <button type="submit" class="export-button">エクスポート</button>
         </form>
         <div class="pagination">
