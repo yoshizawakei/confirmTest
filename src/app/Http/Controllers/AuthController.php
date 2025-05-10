@@ -74,9 +74,6 @@ class AuthController extends Controller
 
     public function exportContacts()
     {
-        $contacts = Contact::query();
-
-
         $contacts = Contact::with("category")->get();
         $csvData = "ID,カテゴリー,姓,名,性別,メールアドレス,電話番号,住所,住所その他,問い合わせ内容,問い合わせ日\n";
         foreach ($contacts as $contact) {

@@ -177,13 +177,13 @@
     border-color: #928178;
 }
 
-.pagination li.disabled span,
+/* .pagination li.disabled span,
 .pagination li.disabled a {
     color: #928178;
     background-color: #928178;
     cursor: default;
     pointer-events: none;
-}
+} */
 
 
 /* モーダル Styles (CSS only) */
