@@ -25,19 +25,19 @@
 
             <select class="gender" name="gender">
                 <option value="">性別</option>
-                <option value="male">男性</option>
-                <option value="female">女性</option>
-                <option value="other" >その他</option>
+                <option value="male" {{ old("gender") == "male" ? "selected" : " " }}>男性</option>
+                <option value="female" {{ old("gender") == "female" ? "selected" : " " }}>女性</option>
+                <option value="other" {{ old("gender") == "other" ? "selected" : " " }}>その他</option>
             </select>
 
             <select class="inquiry" name="inquiry_type">
                 <option value="">お問い合わせの種類</option>
                 @foreach ($categories as $category)
-                    <option value="{{ $category["id"] }}">{{ $category["content"] }}</option>
+                    <option value="{{ $category["id"] }}" {{ old("inquiry_type") == $category["id"] ? "selected" : " " }}>{{ $category["content"] }}</option>
                 @endforeach
             </select>
 
-            <input class="date" type="date" name="search_date" value="search_date">
+            <input class="date" type="date" name="search_date" value="{{ old("search_date") }}">
 
             <button class="search-button" type="submit">検索</button>
         </form>
@@ -47,7 +47,24 @@
         </form>
     </div>
     <div class="table-actions">
+        <!-- <form action="/export" class="export" method="get">
+            @csrf
+            <button type="submit" class="export-button">エクスポート</button>
+        </form> -->
         <form action="/export" class="export" method="get">
+            @csrf
+            @if (request()->filled("keyword"))
+                <input type="hidden" name="keyword" value="{{ request("keyword") }}">
+            @endif
+            @if (request()->filled("inquiry_type"))
+                <input type="hidden" name="inquiry_type" value="{{ request("inquiry_type") }}">
+            @endif
+            @if (request()->filled("gender"))
+                <input type="hidden" name="gender" value="{{ request("gender") }}">
+            @endif
+            @if (request()->filled("search_date"))
+                <input type="hidden" name="search_date" value="{{ request("search_date") }}">
+            @endif
             <button type="submit" class="export-button">エクスポート</button>
         </form>
         <div class="pagination">

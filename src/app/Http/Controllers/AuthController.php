@@ -72,9 +72,31 @@ class AuthController extends Controller
         return redirect("/admin");
     }
 
-    public function exportContacts()
+    public function exportContacts(Request $request)
     {
-        $contacts = Contact::with("category")->get();
+        $query = Contact::with("category");
+        if ($request->filled("keyword")) {
+            $query->keywordSearch($request->keyword);
+        }
+        if ($request->filled("inquiry_type")) {
+            $query->CategorySearch($request->inquiry_type);
+        }
+        if ($request->filled("gender")) {
+            $gender = $request->input("gender");
+            if ($gender === "male") {
+                $gender = "男性";
+            } elseif ($gender === "female") {
+                $gender = "女性";
+            } elseif ($gender === "other") {
+                $gender = "その他";
+            }
+            $query->GenderSearch($gender);
+        }
+        if ($request->filled("search_date")) {
+            $query->DateSearch($request->search_date);
+        }
+        $contacts = $query->get();
+        // $contacts = Contact::with("category")->get();
         $csvData = "ID,カテゴリー,姓,名,性別,メールアドレス,電話番号,住所,住所その他,問い合わせ内容,問い合わせ日\n";
         foreach ($contacts as $contact) {
             $csvData .= sprintf(
